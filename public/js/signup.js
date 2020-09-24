@@ -48,7 +48,7 @@ $(document).ready(function() {
   }
 
   function handleLoginErr(err) {
-    $("#alert .msg").text("Error: It looks like the email address is already in use. Please try a different one.");
+    $("#alert .msg").text("Error: It looks like something went wrong. Please make sure your account exists and try again.");
     $("#alert").fadeIn(500);
   }
 });
