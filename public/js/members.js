@@ -131,14 +131,17 @@ $(document).ready(function() {
   // This function inserts a new todo into our database and then updates the view
   function insertTodo(event) {
     event.preventDefault();
-    var todo = {
-      text: $newItemInput.val().trim(),
-      complete: false,
-      user_id: userid
-    };
-
-    $.post("/api/todos", todo, getTodos);
-    $newItemInput.val("");
+    $.get("/api/user_data").then(function(data) {
+      let userid = data.id;
+      var todo = {
+        text: $newItemInput.val().trim(),
+        complete: false,
+        user_id: userid
+      };
+  
+      $.post("/api/todos", todo, getTodos);
+      $newItemInput.val("");
+    });
   }
 
   // Getting todos from database when page loads
