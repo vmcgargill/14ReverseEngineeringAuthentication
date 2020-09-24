@@ -34,15 +34,10 @@ $(document).ready(function() {
 
   // This function grabs todos from the database and updates the view
   function getTodos() {
-    $.get("/api/user_data").then(function(data) {
-      let userid = data.id;
-
-      $.get("/api/todos/" + userid, function(data) {
-        todos = data;
-        initializeRows();
-      });
+    $.get("/api/todos", function(data) {
+      todos = data;
+      initializeRows();
     });
-
   }
 
   // This function deletes a todo when the user clicks the delete button
@@ -131,17 +126,13 @@ $(document).ready(function() {
   // This function inserts a new todo into our database and then updates the view
   function insertTodo(event) {
     event.preventDefault();
-    $.get("/api/user_data").then(function(data) {
-      let userid = data.id;
-      var todo = {
-        text: $newItemInput.val().trim(),
-        complete: false,
-        user_id: userid
-      };
-  
-      $.post("/api/todos", todo, getTodos);
-      $newItemInput.val("");
-    });
+    var todo = {
+      text: $newItemInput.val().trim(),
+      complete: false
+    };
+
+    $.post("/api/todos", todo, getTodos);
+    $newItemInput.val("");
   }
 
   // Getting todos from database when page loads
