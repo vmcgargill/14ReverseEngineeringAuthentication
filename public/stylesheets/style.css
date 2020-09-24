@@ -2,3 +2,58 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+
+.navbar {
+  background-color: rgb(30, 30, 97);
+  text-align: center;
+  border-radius: 50px 50px 50px 50px;
+  box-shadow: 0 0 15px 4px;
+  margin: 2%;
+  margin-top: 20px;
+}
+
+.nav-item {
+  padding: 5px;
+  border-radius: 30px 30px 30px 30px;
+  transition-duration: 1s;
+}
+
+.nav-item:hover, .nav-item.active:hover {
+  background-color: rgb(85, 115, 248);
+  border-radius: 30px 30px 30px 30px;
+  color: white;
+}
+
+.navbar h1 {
+  color: white;
+}
+
+body {
+  background-color: silver;
+}
+
+.container {
+  background-color: white;
+  border-radius: 30px 30px 30px 30px;
+  border-color: rgb(30, 30, 97);
+  border: 6px;
+  padding: 40px;
+  box-shadow: 0 0 15px 2px;
+}
+ 
+.container h2, .container h4 {
+  text-align: center;
+}
+
+.footer {
+  background-color: rgb(30, 30, 97);
+  text-align: center;
+  padding: 5px;
+  border-radius: 50px 50px 50px 50px;
+  box-shadow: 0 0 15px 4px;
+  margin: 2%;
+}
+
+.footer p, .footer a, .navbar-brand {
+  color: white;
+}

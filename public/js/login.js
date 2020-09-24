@@ -7,6 +7,17 @@ $(document).ready(function() {
   // When the form is submitted, we validate there's an email and password entered
   loginForm.on("submit", function(event) {
     event.preventDefault();
+
+    if (emailInput.val().trim() === "") {
+      $("#alert .msg").text("Error: Email address cannot be null");
+      $("#alert").fadeIn(500);
+    }
+  
+    if (passwordInput.val().trim() === "") {
+      $("#alert .msg").text("Error: Password cannot be null");
+      $("#alert").fadeIn(500);
+    }
+    
     var userData = {
       email: emailInput.val().trim(),
       password: passwordInput.val().trim()
@@ -32,8 +43,11 @@ $(document).ready(function() {
         window.location.replace("/members");
         // If there's an error, log the error
       })
-      .catch(function(err) {
-        console.log(err);
-      });
+      .catch(handleLoginErr);
+  }
+
+  function handleLoginErr(err) {
+    $("#alert .msg").text("Error: Username or Password is incorrect. Please try again.");
+    $("#alert").fadeIn(500);
   }
 });

@@ -4,8 +4,20 @@ $(document).ready(function() {
   var emailInput = $("input#email-input");
   var passwordInput = $("input#password-input");
 
+  
   // When the signup button is clicked, we validate the email and password are not blank
   signUpForm.on("submit", function(event) {
+
+      if (emailInput.val().trim() === "") {
+        $("#alert .msg").text("Error: Email address cannot be null");
+        $("#alert").fadeIn(500);
+      }
+    
+      if (passwordInput.val().trim() === "") {
+        $("#alert .msg").text("Error: Password cannot be null");
+        $("#alert").fadeIn(500);
+      }
+      
     event.preventDefault();
     var userData = {
       email: emailInput.val().trim(),
@@ -36,7 +48,7 @@ $(document).ready(function() {
   }
 
   function handleLoginErr(err) {
-    $("#alert .msg").text(err.responseJSON);
+    $("#alert .msg").text("Error: It looks like the email address is already in use. Please try a different one.");
     $("#alert").fadeIn(500);
   }
 });
