@@ -7,6 +7,7 @@ $(document).ready(function() {
   
   // When the signup button is clicked, we validate the email and password are not blank
   signUpForm.on("submit", function(event) {
+    event.preventDefault();
 
       if (emailInput.val().trim() === "") {
         $("#alert .msg").text("Error: Email address cannot be null");
@@ -18,7 +19,6 @@ $(document).ready(function() {
         $("#alert").fadeIn(500);
       }
       
-    event.preventDefault();
     var userData = {
       email: emailInput.val().trim(),
       password: passwordInput.val().trim()
