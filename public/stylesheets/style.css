@@ -45,6 +45,27 @@ body {
   text-align: center;
 }
 
+.todo-list {
+  margin: 0 auto;
+  margin-top: 75px;
+}
+
+input.new-item:focus {
+  outline: none;
+}
+
+.list-group-item > button.delete,
+.list-group-item > button.complete {
+  float: right;
+  height: 25px;
+  margin-left: 5px;
+}
+
+.edit {
+  width: 100%;
+}
+
+
 .footer {
   background-color: rgb(30, 30, 97);
   text-align: center;
