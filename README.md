@@ -1,4 +1,4 @@
-# 14ReverseEngineeringAuthentication
+# ReverseEngineeringAuthentication
 
 An app that lets you sign in and post your own todos.
 
